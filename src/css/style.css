@@ -1,0 +1,18 @@
+/* :root {
+    --light-color: #F5F5F7;
+    --dark-color: #221F20;
+    --container-padding-inline: 13%;
+    --footer-padding-inline: 10%;
+
+    @media screen and (max-width:768px) {
+        --container-padding-inline: 6%;
+        --footer-padding-inline: 6%;
+    }
+
+    @media screen and (max-width:576px) {
+
+        --container-padding-inline: 15px;
+        --footer-padding-inline: 15px;
+
+    }
+} */

@@ -1,0 +1,41 @@
+@use '/src/sass/base/variables.scss' as v;
+@use '/src/sass/libs/pxtorem.scss' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    &__icons {
+    display: flex;
+    color: v.$dark;
+    align-items: start;
+    a {
+        display: flex;
+        margin-right: rem(15);
+        &:nth-child(2) {
+            margin-right: rem(0);
+        }
+    }
+    &_img {
+        width: rem(15);
+        height: rem(15);
+        display: block;
+    }
+}
+   &__logo {
+    width: rem(80);
+    height: rem(80);
+   }
+}
+
+.menu {
+    padding-right: rem(25);
+    height: rem(23);
+    span {
+        // display: block; так як span рядковий елемент, тому назначаємо block
+        display: block;
+        width: rem(20);
+        height: rem(1);
+        margin-bottom: rem(8);
+        background-color: v.$dark;
+    }
+}

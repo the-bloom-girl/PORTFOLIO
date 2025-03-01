@@ -1,0 +1,19 @@
+@use '/src/sass/libs/pxtorem.scss' as *;
+@use '/src/sass/base/variables.scss' as *;
+
+.promo {
+    padding: rem(50) 0 rem(50) 0;
+    &__title {
+        margin-top: rem(50);
+        margin-bottom: rem(40);
+    }
+    &__img {
+        width: rem(270);
+        height: rem(380);
+        margin: 0 auto;
+    }
+    &__button {
+        display: block;
+        margin: rem(20) auto 0 auto;
+    }
+}

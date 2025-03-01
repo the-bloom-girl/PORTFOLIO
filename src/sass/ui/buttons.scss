@@ -1,0 +1,10 @@
+@use '/src/sass/base/variables.scss' as *;
+@use '/src/sass/libs/pxtorem.scss' as *;
+@use '/src/sass/base/mixins.scss' as *;
+
+.button-default {
+    @include button;
+    width: rem(230);
+    height: rem(50);
+    font-size:rem(20);  
+    }
