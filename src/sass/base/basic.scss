@@ -1,4 +1,5 @@
 @use '/src/sass/base/variables.scss' as *;
+@use '/src/sass/libs/pxtorem.scss' as *;
 
 h1,
 h2,
@@ -44,5 +45,14 @@ body {
 
 .container {
     width: 100%;
-    padding: 0 10px;
+    padding: 0 rem(10);
 }
+
+@media (min-width: 768px) {
+   .container {
+    margin: 0 auto;
+    max-width: rem(720);
+    padding: 0;
+  }
+}
+

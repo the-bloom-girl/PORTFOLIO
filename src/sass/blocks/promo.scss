@@ -3,9 +3,12 @@
 
 .promo {
     padding: rem(50) 0 rem(50) 0;
-    &__title {
+    &__wrapper {
         margin-top: rem(50);
+    }
+    &__title {
         margin-bottom: rem(40);
+        text-align: center;
     }
     &__img {
         width: rem(270);
@@ -15,5 +18,20 @@
     &__button {
         display: block;
         margin: rem(20) auto 0 auto;
+    }
+}
+@media (min-width: 768px) {
+    .promo__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .promo__img {
+        width: rem(230);
+        height: rem(320);
+    }
+    .promo__title {
+        text-align: left;
+        margin-top: rem(320);
+        margin-left: rem(70);
     }
 }

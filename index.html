@@ -20,25 +20,42 @@
     <link rel="stylesheet" href="/src/css/style.css">
 
     <link rel="stylesheet" href="/src/sass/style.scss">
+
 </head>
 
 <body>
     <section class="promo">
         <div class="container">
             <header class="header">
-                <div class="menu">
-                    <span></span><span></span><span></span>
-                </div>
-                <a href="#" class="header__logo"><img src="/src/logo/logo_vase.svg" alt="logo"></a>
-                <div class="header__icons">
+                <div class="header__top">
+                    <div class="menu">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <a href="#" class="header__logo"><img src="/src/logo/logo_vase.svg" alt="logo"></a>
+                    <div class="header__icons">
 
-                    <a href="#"><img class="header__icons_img" src="/src/icons/search.svg" alt="search"></a>
-                    <a href="#"><img class="header__icons_img" src="/src/icons/shopping-bag.svg" alt="bag"></a>
+                        <a href="#"><img class="header__icons_img" src="/src/icons/search.svg" alt="search"></a>
+                        <a href="#"><img class="header__icons_img" src="/src/icons/shopping-bag.svg" alt="bag"></a>
+                    </div>
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="#">catalog</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="#">about</a></li>
+                    </ul>
+                </nav>
             </header>
 
-            <h1 class="title-h1-italic promo__title">Make your dream come true or decorate your home</h1>
-            <img class="promo__img" src="/src/image/promo/ceramic-vase.jpg" alt="promo_ceramica">
-            <button class="button-default promo__button">shop now</button>
+            <div class="promo__wrapper">
+                <h1 class="title-h1-italic promo__title">Make your dream come true <br> or decorate your home</h1>
+
+                <div class="promo__call_to_action">
+                    <img class="promo__img" src="/src/image/promo/ceramic-vase.jpg" alt="promo_ceramica">
+                    <button class="button-default promo__button">shop now</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
