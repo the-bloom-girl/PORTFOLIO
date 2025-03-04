@@ -13,13 +13,27 @@
         text-align:center;
     }
     &__img {
+        margin: 0 auto;
         margin-bottom: rem(20);
     }
     &__text {
         margin-bottom:rem(40);
+        font-size: rem(16);
+        line-height:rem(28);
         a {
             color: orange;
             text-decoration: none;
+        }
+    }
+}
+@media (min-width: 768px){
+    .activities {
+        &__text {
+            font-size: rem(20);
+        }
+        &__img {
+            width: clamp(530px, 95.5vw, 1200px);
+            height: auto;
         }
     }
 }

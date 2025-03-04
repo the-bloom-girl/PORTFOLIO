@@ -17,8 +17,18 @@ font-size:rem(19);
 font-size:rem(32);
 font-weight: 500;
 }
+@media (min-width: 768px) {
+    .title-h1 {
+        font-size: rem(36);
+    }
+}
 
 .subtitle-h1 {
     @include title;
     font-size:rem(20);
+}
+@media (min-width: 768px) {
+   .subtitle-h1{
+        font-size: rem(24);
+    }
 }
