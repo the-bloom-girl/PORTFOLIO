@@ -90,6 +90,46 @@
 
         </div>
     </section>
+    <section class="form">
+        <div class="container">
+            <h1 class="title-h1 form__title">Get in touch</h1>
+            <div class="form__wrapper">
+                <img class="form__img" src="src/image/tea_get.jpg" alt="potterry">
+                <div class="form-container">
+                    <div id="successMessage" class="success-message">Form submitted successfully!</div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name">
+                            <div class="error" id="nameError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                            <div class="error" id="emailError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question">Your Question</label>
+                            <textarea id="question" name="question" rows="4"></textarea>
+                            <div class="error" id="questionError"></div>
+                        </div>
+
+                        <div class="form-group-chekbox">
+                            <input class="checkbox" type="checkbox" id="agree" name="agree">
+                            <label for="agree">I agree with <a href="#">terms</a> terms</label>
+                            <div class="error" id="agreeError"></div>
+                        </div>
+
+                        <button class="button-default form__button" type="submit" id="submitButton">Send
+                            request</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 
     <script type="module" src="/src/js/main.js"></script>
