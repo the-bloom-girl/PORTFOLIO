@@ -135,9 +135,20 @@
     }
 }
 @media (min-width: 1920px) {
+     .header__top {
+        justify-content: flex-end; 
+        gap: rem(530);
+    } 
+    .header__logo {
+        width: rem(150);
+        height: rem(150);
+    }
     .header__nav {
+        margin-top:rem(36);
         ul {
-           gap: rem(60);
+            justify-content: flex-end;
+            gap: rem(60);
+            margin-right:rem(510); 
         }
     }
 

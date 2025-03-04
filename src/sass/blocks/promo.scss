@@ -48,8 +48,10 @@
         display: block;
         top:0;
         left: 0;
+        // width:  clamp(450px, 37.5vw, 640px);
         width: rem(450);
         height: rem(630);
+        object-fit: cover;
     }
     .promo__title {
         margin-left: rem(450);
@@ -57,19 +59,25 @@
     }
 }
 @media (min-width: 1920px) {
+    .promo {
+        padding-top: rem(40);
+    }
+     .promo__wrapper {
+        margin-top: rem(70);
+    }
      .promo__pottery{
         width: rem(640);
         height: rem(900);
      }
      .promo__title {
-        margin-left: rem(790);
-        margin-top: rem(420);
-
+        margin-left: rem(620);
+        margin-top: rem(400);
      }
      .promo__img {
         width: rem(330);
         height: rem(480);
      }
-
-
+     .promo__button {
+        margin-top: rem(50);
+     }
 }

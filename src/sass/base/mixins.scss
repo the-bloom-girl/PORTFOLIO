@@ -12,6 +12,9 @@
         text-align:center;
         background-color:transparent;
         border-width: rem(1);
+        border-radius: rem(2);
         border-color: $dark;
         color: $dark;
+        padding: 0 rem(10);
+        cursor: pointer;
 }
