@@ -22,6 +22,11 @@ font-weight: 500;
         font-size: rem(36);
     }
 }
+@media (min-width: 1200px) {
+    .title-h1 {
+        font-size: rem(40);
+    }
+}
 
 .subtitle-h1 {
     @include title;

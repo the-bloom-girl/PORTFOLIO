@@ -11,6 +11,10 @@
     &__subtitle {
         margin-bottom: rem(40);
         text-align:center;
+        a {
+            text-decoration: none;
+            color: $dark;
+        }
     }
     &__img {
         margin: 0 auto;
@@ -34,6 +38,31 @@
         &__img {
             width: clamp(530px, 95.5vw, 1200px);
             height: auto;
+        }
+    }
+}
+@media (min-width: 1200px){
+    .activities {
+        display: flex;
+        justify-content: space-between;
+        gap:rem(20);
+        &__store {
+            width: 45%;
+        }
+        &__workshop{
+             width: 55%;
+        }
+        &__title {
+            margin-bottom: rem(80);
+        }
+        &__subtitle {
+             margin-bottom: rem(60);
+             font-size: rem(28);
+        }
+        &__img {
+            height: rem(250);
+            object-fit: cover;
+            margin-bottom: rem(30);
         }
     }
 }
