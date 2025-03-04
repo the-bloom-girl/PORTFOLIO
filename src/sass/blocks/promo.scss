@@ -2,6 +2,7 @@
 @use '/src/sass/base/variables.scss' as *;
 
 .promo {
+    position: relative;
     padding: rem(50) 0 rem(50) 0;
     &__wrapper {
         margin-top: rem(50);
@@ -19,6 +20,9 @@
         display: block;
         margin: rem(20) auto 0 auto;
     }
+    &__pottery {
+        display: none;
+    }
 }
 @media (min-width: 768px) {
     .promo__wrapper {
@@ -34,4 +38,38 @@
         margin-top: rem(320);
         margin-left: rem(70);
     }
+}
+@media (min-width: 1200px){
+    .promo__wrapper {
+        justify-content: space-evenly;
+    }
+    .promo__pottery {
+        position: absolute;
+        display: block;
+        top:0;
+        left: 0;
+        width: rem(450);
+        height: rem(630);
+    }
+    .promo__title {
+        margin-left: rem(450);
+        margin-top: rem(260);
+    }
+}
+@media (min-width: 1920px) {
+     .promo__pottery{
+        width: rem(640);
+        height: rem(900);
+     }
+     .promo__title {
+        margin-left: rem(790);
+        margin-top: rem(420);
+
+     }
+     .promo__img {
+        width: rem(330);
+        height: rem(480);
+     }
+
+
 }

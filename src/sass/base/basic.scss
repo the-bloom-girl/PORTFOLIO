@@ -56,3 +56,15 @@ body {
   }
 }
 
+@media (min-width: 1200px) {
+   .container {
+    max-width: rem(1140);
+  }
+}
+@media (min-width: 1920px) {
+   .container {
+    max-width: rem(1440);
+  }
+}
+
+
