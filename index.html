@@ -97,32 +97,38 @@
                 <img class="form__img" src="src/image/tea_get.jpg" alt="potterry">
                 <div class="form-container">
                     <div id="successMessage" class="success-message">Form submitted successfully!</div>
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://jsonplaceholder.typicode.com/posts" method="post"
+                        autocomplete="on">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name">
+                            <input minlength="2" type="text" required pattern="[A-Za-zA-Яа-СсС/s]+" placeholder="Name"
+                                id="name" name="name">
                             <div class="error" id="nameError"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
+                            <input type="email" required placeholder="Email" id="email" name="email">
                             <div class="error" id="emailError"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="question">Your Question</label>
-                            <textarea id="question" name="question" rows="4"></textarea>
+                            <textarea required placeholder="Question" id="question" name="question" rows="4"></textarea>
                             <div class="error" id="questionError"></div>
                         </div>
 
                         <div class="form-group-chekbox">
-                            <input class="checkbox" type="checkbox" id="agree" name="agree">
-                            <label for="agree">I agree with <a href="#">terms</a> terms</label>
+                            <input required type="checkbox" id="agree" name="agree">
+                            <label for="agree">
+                                <span class="custom-checkbox"></span>
+                                I agree with <a href="#">terms</a>
+                            </label>
                             <div class="error" id="agreeError"></div>
                         </div>
 
-                        <button class="button-default form__button" type="submit" id="submitButton">Send
+
+                        <button class="button-request form__button" type="submit" id="submitButton">Send
                             request</button>
                     </form>
                 </div>

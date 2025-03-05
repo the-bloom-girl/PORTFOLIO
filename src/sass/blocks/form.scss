@@ -1,85 +1,62 @@
 @use '/src/sass/base/variables.scss' as *;
 @use '/src/sass/libs/pxtorem.scss' as *;
+
+// загальний контейнер section .form
 .form {
     padding: 0 rem(20);
         .form__img {
-            display: none;
+            // приховуємо картинку, тільки на 1200 буде  display block
+            display: none; 
         }
         .form__title {
         margin-bottom: rem(40);
         text-align: center;
         }
         .form-container {
-            background: white;
-            padding: rem(10);
+            background:$white;
+            // внутрішні відступи від краю контейнера до полів
+            padding: rem(10);   
             border-radius: rem(1);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            // ширина підлаштовується автоматично екрану
             width:auto;
             text-align: left;
         }
+        //  це поля для вводу, відступи між ними 15px
         .form-group {
             margin-bottom: rem(15);
             text-align: left;
         }
-        .form-group-chekbox {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            margin-bottom: rem(20);
-            .checkbox {
-                width: rem(15);
-                height: rem(15);
-                margin-right: rem(15);
-                 &:hover {
-                    border-color:rgb(203, 12, 12);
-                }
-                &:active {
-                background-color:rgb(203, 12, 12);
-            }
-            }
-            a {
-                text-decoration: none;
-            }
-        }
-        .form__button {
-            font-size: rem(16);
-            width: rem(220);
-            height: rem(40);
-        }
         label {
+            // block говорить, що кожне поле буде з нового рядка як блочні елементи+стиль тексту всередині
             display: block;
             font-weight: 300;
             font-size: rem(16);
         }
         input, textarea {
+            // ширина полів буде = ширині форми
             width: 100%;
+            // відступи між текстом і полем
             padding: rem(8);
+            // відступ між placeholder і полем
             margin-top: rem(5);
             border: 1px solid #d9d7d7;
             border-radius: rem(1);
+            // вимикає стандартну рамку браузера при фокусі
+            outline: none;
         }
-   
-     /* Фокус на полі */ 
-         input:focus, textarea:focus {
-         border-color: rgb(36, 173, 91);
+         /* Ховер: змінюємо колір рамки */
+        input:hover {
+        border-color:$dark;
         }
-    /* Валідація: правильне введення */
-         input:valid, textarea:valid {
-         border-color: rgb(161, 157, 157);
+         /* Фокус: поле активне */
+         input:focus {
+         border-color:  rgb(214, 132, 32);
         }
-    /* Валідація: невірне введення (HTML5 required) */
-         input:invalid, textarea:invalid {
-         border-color: rgb(121, 5, 49);
-        }
-    /* Вимкнене поле */
-        input:disabled, textarea:disabled {
-        border-color: #f0f0f0;
-        cursor: not-allowed;
-        }
-        .error {
-            color: rgb(203, 12, 12);
-            font-size: rem(12);
-            margin-top: rem(5);
+        /* Стилізація помилки */
+         input .error {
+         outline: none;
+         border-color: rgb(193, 13, 49);
         }
         .success-message {
             display: none;
@@ -87,13 +64,73 @@
             font-size: rem(14);
             margin-bottom: rem(10);
         }
+        
+         .form-group-chekbox {
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         margin-bottom: rem(20);
+            a {
+                text-decoration: none;
+            }
+         /* Приховуємо стандартний чекбокс */
+         input[type="checkbox"] {
+         display: none;
+         }
+         /* Кастомний чекбокс */
+         .custom-checkbox {
+            width: rem(15);
+            height: rem(15);
+            margin-right: rem(15);
+            border: 1px solid #ccc;
+            border-radius: 1px;
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s;
+            // accent-color: orange;
+            cursor: pointer; 
+        }
+         /* Наведення */
+         label:hover .custom-checkbox {
+         border-color: rgb(208, 153, 57);
+         }
+
+          /* При натисканні */
+         label:active .custom-checkbox {
+         background-color: rgb(249, 247, 244);
+         }
+         /* Коли чекбокс вибраний */
+         input:checked + label .custom-checkbox {
+          background-color: rgb(208, 153, 57);
+          border-color: rgb(208, 153, 57);
+        }
+
+         /* Галочка */
+         input:checked + label .custom-checkbox::after {
+         content: "✔";
+         position: absolute;
+         top: -2px;
+         left: 4px;
+         color: white;
+         font-size: 14px;
+         font-weight: normal;
+        }
+         .error {
+         color: red;
+         font-size: 16px;
+         text-align: left;
+         margin-left: 10px;
+        }
+    }
+
 }
+
 @media (min-width: 768px) {
-    .form{
+    .form {
        .form-container {
         width: 50%;
-    } 
-    }
+      } 
+   }
 }
 @media (min-width: 1200px) {
     .form {
@@ -110,7 +147,7 @@
         width: 50%;
     }
        .form-container {
-        width: 25%;
+        width: 30%;
     }  
   }
 }

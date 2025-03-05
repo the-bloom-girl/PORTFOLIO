@@ -29,3 +29,17 @@
             font-size:rem(20); 
         }
     }
+    .button-request {
+    @include button;
+    width: rem(220);
+    height: rem(40);
+    font-size:rem(16); 
+    &:hover {
+        border-color:rgb(208, 153, 57);
+        } 
+    &:active{
+        border-color:rgb(208, 153, 57);
+        color: rgb(208, 153, 57);
+    }
+
+    }

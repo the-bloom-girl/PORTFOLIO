@@ -35,11 +35,17 @@ document.getElementById('contactForm').addEventListener('submit', event => {
 	}
 
 	// Перевірка чекбоксу
-	const agree = document.getElementById('agree').checked;
-	if (!agree) {
-		document.getElementById('agreeError').textContent = 'You must agree to continue';
-		isValid = false;
-	}
+	document.getElementById('contactForm').addEventListener('submit', event => {
+		const agreeCheckbox = document.getElementById('agree');
+		const agreeError = document.getElementById('agreeError');
+
+		if (agreeCheckbox.checked === false) { // Явно порівнюємо значення
+			agreeError.textContent = 'You must agree to continue';
+			event.preventDefault(); // Забороняємо відправку форми
+		} else {
+			agreeError.textContent = ''; // Очищаємо помилку
+		}
+	});
 
 	if (isValid) {
 		// Показуємо повідомлення про успішну відправку
@@ -58,5 +64,94 @@ document.getElementById('contactForm').addEventListener('submit', event => {
 			submitButton.disabled = false;
 		}, 3000);
 	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		document.getElementById('contactForm').addEventListener('submit', async function (event) {
+			event.preventDefault(); // ❌ Зупиняємо стандартне відправлення форми
+
+			const submitButton = document.getElementById('submitButton');
+			const responseMessage = document.getElementById('responseMessage');
+			const formData = new FormData(this);
+
+			// ❌ Захист від подвійного натискання
+			if (submitButton.disabled) {
+				return;
+			}
+
+			submitButton.textContent = 'Submitting...';
+			submitButton.disabled = true; // Вимикаємо кнопку
+
+			try {
+				const response = await fetch(this.action, {
+					method: this.method,
+					body: formData,
+				});
+
+				if (!response.ok) {
+					throw new Error('Server error!');
+				}
+
+				const _result = await response.json(); // ESLint не буде лаятися
+				console.log(_result); // Використовуємо отримані дані (якщо треба)
+
+				responseMessage.textContent = '✅ Form submitted successfully!';
+				responseMessage.style.color = 'green';
+			} catch (_error) { // ✅ ESLint тепер не буде лаятися
+				console.error('Form submission error:', _error); // Виводимо в консоль для налагодження
+				responseMessage.textContent = '❌ Error submitting form!';
+				responseMessage.style.color = 'red';
+			}
+
+			setTimeout(() => {
+				submitButton.textContent = 'Submit';
+				submitButton.disabled = false; // Через 2 секунди кнопка знову активна
+			}, 2000);
+		});
+	});
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	document.getElementById('contactForm').addEventListener('submit', async function (event) {
+		event.preventDefault(); // ❌ Зупиняємо стандартне відправлення форми
+
+		const submitButton = document.getElementById('submitButton');
+		const responseMessage = document.getElementById('responseMessage');
+		const formData = new FormData(this);
+
+		// ❌ Захист від подвійного натискання
+		if (submitButton.disabled) {
+			return;
+		}
+
+		submitButton.textContent = 'Submitting...';
+		submitButton.disabled = true; // Вимикаємо кнопку
+
+		try {
+			const response = await fetch(this.action, {
+				method: this.method,
+				body: formData,
+			});
+
+			if (!response.ok) {
+				throw new Error('Server error!');
+			}
+
+			const _result = await response.json(); // Використовуємо змінну (_result), щоб уникнути помилки ESLint
+			console.log('Server response:', _result); // Виводимо в консоль для налагодження
+
+			responseMessage.textContent = '✅ Form submitted successfully!';
+			responseMessage.style.color = 'green';
+		} catch (_error) { // ✅ ESLint тепер не лається
+			console.error('Form submission error:', _error); // Виводимо помилку в консоль
+			responseMessage.textContent = '❌ Error submitting form!';
+			responseMessage.style.color = 'red';
+		}
+
+		// ✅ Використовуємо `setTimeout`, щоб повернути кнопку у стан "Submit"
+		setTimeout(() => {
+			submitButton.textContent = 'Submit'; // 🔄 Кнопка повертається у стан "Submit"
+			submitButton.disabled = false; // 🔓 Знову вмикаємо кнопку
+		}, 2000);
+	});
 });
 
