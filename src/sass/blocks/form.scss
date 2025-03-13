@@ -4,6 +4,7 @@
 // загальний контейнер section .form
 .form {
     padding: 0 rem(20);
+    padding-bottom: rem(60);
         .form__img {
             // приховуємо картинку, тільки на 1200 буде  display block
             display: none; 
@@ -20,18 +21,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             // ширина підлаштовується автоматично екрану
             width:auto;
-            text-align: left;
         }
         //  це поля для вводу, відступи між ними 15px
         .form-group {
             margin-bottom: rem(15);
-            text-align: left;
+
         }
         label {
             // block говорить, що кожне поле буде з нового рядка як блочні елементи+стиль тексту всередині
             display: block;
             font-weight: 300;
             font-size: rem(16);
+            text-align: left;
         }
         input, textarea {
             // ширина полів буде = ширині форми
@@ -40,7 +41,7 @@
             padding: rem(8);
             // відступ між placeholder і полем
             margin-top: rem(5);
-            border: 1px solid #d9d7d7;
+            border: 1px solid #cac7c7;
             border-radius: rem(1);
             // вимикає стандартну рамку браузера при фокусі
             outline: none;
@@ -54,29 +55,35 @@
          border-color:  rgb(214, 132, 32);
         }
         /* Стилізація помилки */
-         input .error {
-         outline: none;
+         input.error {
+        //  outline: none;
          border-color: rgb(193, 13, 49);
         }
+        input.error:focus {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
         .success-message {
             display: none;
             color: rgb(5, 108, 5);
             font-size: rem(14);
             margin-bottom: rem(10);
         }
-        
+
          .form-group-chekbox {
          display: flex;
          justify-content: flex-start;
-         align-items: center;
          margin-bottom: rem(20);
             a {
                 text-decoration: none;
+                margin-left: 3px;
             }
+         
          /* Приховуємо стандартний чекбокс */
          input[type="checkbox"] {
-         display: none;
+            display: none;
+            // accent-color:orange;
          }
+        
          /* Кастомний чекбокс */
          .custom-checkbox {
             width: rem(15);
@@ -87,8 +94,11 @@
             display: inline-block;
             position: relative;
             transition: all 0.3s;
-            // accent-color: orange;
             cursor: pointer; 
+        }
+        .custom-agree {
+            display: flex;
+            align-items: center;
         }
          /* Наведення */
          label:hover .custom-checkbox {

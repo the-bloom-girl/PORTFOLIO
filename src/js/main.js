@@ -154,4 +154,117 @@ document.addEventListener('DOMContentLoaded', () => {
 		}, 2000);
 	});
 });
+document.getElementById('contactForm').addEventListener('submit', event => {
+	const nameInput = document.getElementById('name');
+	const nameError = document.getElementById('nameError');
+
+	if (nameInput.value.trim() === '') {
+		nameInput.classList.add('error'); // Додаємо помилку
+		nameError.style.display = 'block'; // Показуємо повідомлення
+		event.preventDefault();
+	} else {
+		nameInput.classList.remove('error'); // Прибираємо помилку
+		nameError.style.display = 'none';
+	}
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	const slides = document.querySelector('.slides');
+	const buttons = document.querySelectorAll('.slider-btn');
+	const prevBtn = document.querySelector('.prev');
+	const nextBtn = document.querySelector('.next');
+
+	const slideWidth = 330; // Ширина 1 картинки + відступ
+	let activeIndex = 0; // Початковий активний слайд
+	const maxIndex = 1; // Можна зміститися лише на 1 (4 картинки, 3 видно)
+
+	// Функція зміни слайду
+	function changeSlide(index) {
+		slides.style.transform = `translateX(-${index * slideWidth}px)`;
+
+		// Оновлюємо активний клас у кнопок
+		buttons.forEach(btn => btn.classList.remove('active'));
+		buttons[index].classList.add('active');
+
+		activeIndex = index;
+	}
+
+	// Додаємо подію для кнопок-індикаторів
+	buttons.forEach((button, index) => {
+		button.addEventListener('click', () => changeSlide(index));
+	});
+
+	// Кнопка "Вперед"
+	nextBtn.addEventListener('click', () => {
+		if (activeIndex < maxIndex) {
+			changeSlide(activeIndex + 1);
+		}
+	});
+
+	// Кнопка "Назад"
+	prevBtn.addEventListener('click', () => {
+		if (activeIndex > 0) {
+			changeSlide(activeIndex - 1);
+		}
+	});
+	// Встановлюємо активний клас на першу кнопку при завантаженні
+	buttons[0].classList.add('active');
+});
+document.addEventListener('DOMContentLoaded', () => {
+	const submitButton = document.getElementById('submitButton');
+	const emailInput = document.getElementById('email');
+	const emailError = document.getElementById('emailError');
+	const agreeCheckbox = document.getElementById('agree');
+	const agreeError = document.getElementById('agreeError');
+
+	// Створюємо блок для повідомлення про успіх
+	const successMessage = document.createElement('div');
+	successMessage.id = 'successMessage';
+	successMessage.style.color = 'green';
+	successMessage.style.fontSize = '16px';
+	successMessage.style.marginTop = '10px';
+	successMessage.style.display = 'none';
+	submitButton.parentNode.appendChild(successMessage);
+
+	submitButton.addEventListener('click', event => {
+		event.preventDefault(); // Зупиняємо стандартне відправлення форми
+
+		let isValid = true; // Перемикач для перевірки всіх полів
+		const emailValue = emailInput.value.trim();
+		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Регулярний вираз для перевірки email
+
+		// Перевірка email
+		if (emailValue === '') {
+			emailError.textContent = 'E-mail is required';
+			emailError.style.display = 'block';
+			isValid = false;
+		} else if (emailPattern.test(emailValue)) {
+			emailError.textContent = '';
+			emailError.style.display = 'none';
+		} else {
+			emailError.textContent = 'Enter a valid e-mail';
+			emailError.style.display = 'block';
+			isValid = false;
+		}
+
+		// Перевірка чекбокса
+		if (agreeCheckbox.checked) {
+			agreeError.textContent = '';
+			agreeError.style.display = 'none';
+		} else {
+			agreeError.textContent = 'You must agree to the terms';
+			agreeError.style.display = 'block';
+			isValid = false;
+		}
+
+		// Якщо форма валідна, виводимо повідомлення про успіх
+		if (isValid) {
+			successMessage.textContent = 'Form submitted successfully!';
+			successMessage.style.display = 'block';
+
+			// Тут можна викликати реальне відправлення форми через AJAX або `form.submit()`
+			console.log('Form submitted successfully!'); // Логування у консоль
+		}
+	});
+});
 

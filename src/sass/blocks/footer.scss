@@ -1,0 +1,141 @@
+@use '/src/sass/libs/pxtorem.scss' as *;
+@use '/src/sass/base/variables.scss'as *;
+.footer {
+    padding: 50px 10px;
+    background-color: $dark;
+    color: $white;
+    .footer__submit-wrapper{
+        display: none;
+    }
+    input {
+        width: rem(270);
+        height: rem(35);
+        background-color: transparent;
+        border-color: transparent;
+        border-bottom: 1px solid $white;
+        outline: none;
+        color: $white;
+    }
+     input::placeholder {
+        display: block;
+        transform: translateY(-10px); /* Опускає плейсхолдер вниз */
+        color: $white; /* Змінює колір підказки */
+        font-size: rem(14);
+    }
+
+    p {
+        margin-bottom: rem(20);
+        font-size: rem(14);
+    }
+     
+      .form-group-chekbox {
+         display: flex;
+         justify-content: flex-start;
+         margin-bottom: rem(20);
+         margin-top: rem(20);
+            a {
+                text-decoration: none;
+                margin-left: rem(5);
+            }
+        }
+     /* Приховуємо стандартний чекбокс */
+         input[type="checkbox"] {
+            display: none;
+            // accent-color:orange;
+         }
+     .custom-checkbox {
+            width: rem(15);
+            height: rem(15);
+            margin-right: rem(15);
+            border: 1px solid #ccc;
+            border-radius: 1px;
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s;
+            cursor: pointer; 
+        }
+        .custom-agree {
+            display: flex;
+            align-items: center;
+        }
+          /* Галочка */
+         input:checked + label .custom-checkbox::after {
+         content: "✔";
+         position: absolute;
+         top: -2px;
+         left: 4px;
+         color: white;
+         font-size: 14px;
+         font-weight: normal;
+        }
+         .error {
+         color: red;
+         font-size: 16px;
+         text-align: left;
+         margin-left: 10px;
+        }
+        .footer__info {
+            margin-top: rem(40);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            column-gap: rem(60);
+            row-gap: rem(40);
+        }
+
+        .footer__copyright{
+            margin-top: rem(40);
+            text-align: center;
+            font-size: rem(14);
+        }
+        .footer__link {
+            margin-bottom:rem(20);
+            font-size: rem(16);
+            a {
+                color: $white;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+        .footer__follow {
+            .footer__social {
+                display: flex;
+                gap: rem(10);
+                img {
+                    width: rem(24);
+                    height: rem(24);
+                }
+            }
+        }
+}
+
+
+@media (min-width: 768px) {
+    .footer {
+        padding: 50px 20px;
+        p {
+            font-size: rem(16);
+        }
+   }
+}
+@media (min-width: 1200px) {
+    .footer {
+        padding: 50px 30px;
+         .footer__submit-wrapper{
+        display: block;
+        margin-right: rem(100);
+    }  
+    .footer__submit {
+        display: none;
+    }
+   }
+   
+}
+@media (min-width: 1920px) {
+    .footer {
+        padding: 80px 240px;
+    .footer__submit-wrapper{
+        margin-right: rem(200);
+    } 
+   }
+}

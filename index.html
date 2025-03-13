@@ -117,25 +117,123 @@
                             <textarea required placeholder="Question" id="question" name="question" rows="4"></textarea>
                             <div class="error" id="questionError"></div>
                         </div>
-
                         <div class="form-group-chekbox">
                             <input required type="checkbox" id="agree" name="agree">
-                            <label for="agree">
+                            <label class="custom-agree" for="agree">
                                 <span class="custom-checkbox"></span>
                                 I agree with <a href="#">terms</a>
                             </label>
                             <div class="error" id="agreeError"></div>
                         </div>
 
-
                         <button class="button-request form__button" type="submit" id="submitButton">Send
                             request</button>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
+
+    <section class="slider">
+        <div class="container">
+            <h2 class="title-h1 slider__title">check out our works</h2>
+
+            <button class="arrow prev">&#10094;</button>
+
+            <div class="slider-container">
+                <div class="slides">
+                    <div class="slide"><img src="/src/image/works/tea-ceremony-1.jpg" alt="tea"></div>
+                    <div class="slide"><img src="/src/image/works/tea- 2.jpg" alt="potterry"></div>
+                    <div class="slide"><img src="/src/image/works/tea-3.jpg" alt="tea"></div>
+                    <div class="slide"><img src="/src/image/tea_get.jpg" alt="tea"></div>
+                </div>
+            </div>
+
+            <button class="arrow next">&#10095;</button>
+
+            <div class="slider-controls">
+                <button class="slider-btn" data-index="0"></button>
+                <button class="slider-btn" data-index="1"></button>
+                <button class="slider-btn" data-index="2"></button>
+                <button class="slider-btn" data-index="3"></button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__submit">
+                <h2 class="title-h2 footer__title">newsletter</h2>
+                <p>Keep up to date with news and promotions</p>
+                <form id="contactForm" action="https://jsonplaceholder.typicode.com/posts" method="post"
+                    autocomplete="on">
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="email" required placeholder="Enter your e-mail" id="email" name="email">
+                        <div class="error" id="emailError"></div>
+                    </div>
+                    <div class="form-group-chekbox">
+                        <input required type="checkbox" id="agree" name="agree">
+                        <label class="custom-agree" for="agree">
+                            <span class="custom-checkbox"></span>
+                            I agree with <a href="#">terms</a>
+                        </label>
+                        <div class="error" id="agreeError"></div>
+                    </div>
+                    <button class="button-submit form__button" type="submit" id="submitButton">Submit
+                    </button>
+                </form>
+            </div>
+
+            <div class="footer__info">
+                <div class="footer__submit-wrapper">
+                    <h2 class="title-h2 footer__title">newsletter</h2>
+                    <p>Keep up to date with news and promotions</p>
+                    <form id="contactForm" action="https://jsonplaceholder.typicode.com/posts" method="post"
+                        autocomplete="on">
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <input type="email" required placeholder="Enter your e-mail" id="email" name="email">
+                            <div class="error" id="emailError"></div>
+                        </div>
+                        <div class="form-group-chekbox">
+                            <input required type="checkbox" id="agree" name="agree">
+                            <label class="custom-agree" for="agree">
+                                <span class="custom-checkbox"></span>
+                                I agree with <a href="#">terms</a>
+                            </label>
+                            <div class="error" id="agreeError"></div>
+                        </div>
+                        <button class="button-submit form__button" type="submit" id="submitButton">Submit
+                        </button>
+                    </form>
+                </div>
+                <div class="footer__discaver">
+                    <h2 class="title-h2 footer__title">discover</h2>
+                    <div class="footer__link"><a href="#">About us</a></div>
+                    <div class="footer__link"><a href="#">Blog</a></div>
+                </div>
+                <div class="footer__shopping">
+                    <h2 class="title-h2 footer__title">shopping</h2>
+                    <div class="footer__link"><a href="#">Catalog</a></div>
+                </div>
+                <div class="footer__information">
+                    <h2 class="title-h2 footer__title">information</h2>
+                    <div class="footer__link"><a href="#">Terms and Conditions</a></div>
+                </div>
+                <div class="footer__follow">
+                    <h2 class="title-h2 footer__title">follow us</h2>
+                    <div class="footer__social">
+                        <a href="#"><img src="/src/icons/facebook.svg" alt="facebook"></a>
+                        <a href="#"><img src="/src/icons/instagram.svg" alt="instagram"></a>
+                        <a href="#"><img src="/src/icons/pinterest.svg" alt="pinterest"></a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer__copyright">© Copyright 2025, Ceramic soul</p>
+        </div>
+    </footer>
+
 
 
     <script type="module" src="/src/js/main.js"></script>

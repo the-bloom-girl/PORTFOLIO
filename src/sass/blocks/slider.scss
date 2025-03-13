@@ -1,0 +1,126 @@
+@use '/src/sass/libs/pxtorem.scss' as *;
+@use '/src/sass/base/variables.scss'as *;
+
+.slider {
+    padding: rem(0) rem(0) rem(50) rem(0);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    margin: auto;
+    position: relative;
+    
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 28px;
+    }
+    /* Контейнер для картинок */
+    .slider-container {
+    width: 320px; /* Видно лише 3 картинки */
+    height: 230px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    }
+    /* Всі слайди */
+    .slides {
+    display: flex;
+    justify-content: start;
+    transition: transform 0.5s ease-in-out;
+    }
+    /* Окремий слайд */
+    .slide {
+    min-width: 320px; /* Ширина 1 картинки */
+    margin-right: 10px;
+    }
+    /* Зображення */
+    .slide {
+    img {
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+     }
+    }
+    
+   /* Стрілки (кнопки "вперед" і "назад") */
+    .arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $dark;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: $white;
+    font-size: 28px;
+    z-index: 10;
+   }
+   /* Розташування стрілок */
+   .prev {
+    left: -50px;
+   }
+
+   .next {
+    right: -50px;
+   }
+   /* Наведення на стрілки */
+   .arrow:hover {
+    color: rgba(239, 153, 31, 0.8);
+   }
+/* Контейнер для маленьких кнопок-квадратиків */
+    .slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+   }
+
+/* Маленькі кнопки для навігації */
+   .slider-btn {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #4a2804;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Активна кнопка */
+.slider-btn.active {
+    background-color: #c8a266;
+  }
+}
+// @media (min-width: 768px){
+//     .slider {
+//         width: 400px;
+//         height: 300px;
+//     .slider-container {
+//     width: 400px; /* Видно лише 3 картинки */
+//     } 
+//     .slide {
+//         width: 400px;
+//         height: 300px;
+//         img {
+//         width: 100%;
+//         }
+//     }
+//  }
+// }
+@media (min-width: 1200px) {
+    .slider {
+        width: 990px;
+    .slider-container {
+    width: 990px; /* Видно лише 3 картинки */
+    } 
+    .arrow {
+        display: block;
+    }
+ }
+}
+ @media (min-width: 1920px) {
+     .slider {
+        padding-top: 60px;
+   }
+}

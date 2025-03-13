@@ -41,5 +41,13 @@
         border-color:rgb(208, 153, 57);
         color: rgb(208, 153, 57);
     }
-
+    }
+    .button-submit {
+       width: rem(80);
+       height: rem(35);
+       background-color:transparent;
+       border-color:$white;
+       color: $white;
+       text-transform: uppercase;
+       font-size: rem(16);
     }
